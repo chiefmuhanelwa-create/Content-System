@@ -86,7 +86,7 @@ TASK: Vet this content using the 7-tier NOCHILL vetting system. Return a structu
     });
 
     const message = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20241022',
+      model: 'claude-3-5-sonnet-20240620',
       max_tokens: 4096,
       system: FOUNDATION_PROMPT + '\n\n' + VETTING_JUDGE_PROMPT,
       messages: [

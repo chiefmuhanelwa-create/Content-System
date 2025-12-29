@@ -83,7 +83,7 @@ TASK: Generate content following the NOCHILL Content Governance System's Constit
     });
 
     const message = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20241022',
+      model: 'claude-3-5-sonnet-20240620',
       max_tokens: 4096,
       system: FOUNDATION_PROMPT + '\n\n' + GENERATION_ENGINE_PROMPT,
       messages: [
