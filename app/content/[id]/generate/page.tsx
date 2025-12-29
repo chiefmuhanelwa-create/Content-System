@@ -34,7 +34,8 @@ export default function GeneratePage() {
       });
 
       if (!generateResponse.ok) {
-        throw new Error('Content generation failed');
+        const errorData = await generateResponse.json();
+        throw new Error(errorData.message || errorData.error || 'Content generation failed');
       }
 
       const generateData = await generateResponse.json();
@@ -47,7 +48,8 @@ export default function GeneratePage() {
       });
 
       if (!vetResponse.ok) {
-        throw new Error('Content vetting failed');
+        const errorData = await vetResponse.json();
+        throw new Error(errorData.message || errorData.error || 'Content vetting failed');
       }
 
       const vetData = await vetResponse.json();

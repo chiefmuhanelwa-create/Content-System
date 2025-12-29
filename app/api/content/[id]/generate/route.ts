@@ -8,7 +8,28 @@ export async function POST(
   { params }: { params: { id: string } }
 ) {
   try {
-    const sql = neon(process.env.DATABASE_URL || '');
+    // Check for API key first
+    if (!process.env.ANTHROPIC_API_KEY) {
+      return NextResponse.json(
+        {
+          message: 'Anthropic API key not configured',
+          error: 'Please add ANTHROPIC_API_KEY to your Vercel environment variables and redeploy. Get your key from https://console.anthropic.com'
+        },
+        { status: 500 }
+      );
+    }
+
+    if (!process.env.DATABASE_URL) {
+      return NextResponse.json(
+        {
+          message: 'Database not configured',
+          error: 'DATABASE_URL environment variable is missing'
+        },
+        { status: 500 }
+      );
+    }
+
+    const sql = neon(process.env.DATABASE_URL);
     const contentId = parseInt(params.id);
 
     // Fetch content request
