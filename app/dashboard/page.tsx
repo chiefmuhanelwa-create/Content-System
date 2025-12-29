@@ -134,23 +134,23 @@ export default function DashboardPage() {
         <div className="bg-white rounded-lg shadow p-6 mb-8">
           <h3 className="text-xl font-bold text-gray-900 mb-4">Quick Actions</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <button className="p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors text-center">
+            <a href="/create" className="p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors text-center block">
               <div className="text-4xl mb-2">✍️</div>
               <div className="font-semibold text-gray-900">Create Content</div>
               <div className="text-sm text-gray-600">Start a new piece</div>
-            </button>
+            </a>
 
-            <button className="p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-green-500 hover:bg-green-50 transition-colors text-center">
+            <a href="/library" className="p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-green-500 hover:bg-green-50 transition-colors text-center block">
               <div className="text-4xl mb-2">📚</div>
               <div className="font-semibold text-gray-900">Content Library</div>
               <div className="text-sm text-gray-600">View all content</div>
-            </button>
+            </a>
 
-            <button className="p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-colors text-center">
+            <a href="/mastery" className="p-6 border-2 border-dashed border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-colors text-center block">
               <div className="text-4xl mb-2">📊</div>
               <div className="font-semibold text-gray-900">Mastery Report</div>
               <div className="text-sm text-gray-600">Track progress</div>
-            </button>
+            </a>
           </div>
         </div>
 
