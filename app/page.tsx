@@ -16,10 +16,10 @@ export default function Home() {
 
         <div className="flex gap-4 justify-center">
           <Link
-            href="/login"
+            href="/dashboard"
             className="px-8 py-4 bg-blue-600 text-white font-bold text-lg rounded-lg hover:bg-blue-700 transition-colors"
           >
-            Login to Dashboard
+            Go to Dashboard
           </Link>
         </div>
 
