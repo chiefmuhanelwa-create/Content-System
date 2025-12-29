@@ -226,7 +226,12 @@ TASK: Vet this content using the 7-tier NOCHILL vetting system. Return a structu
     }, { status: 200 });
 
   } catch (error: any) {
-    console.error('Content vetting error:', error);
+    console.error('=== CONTENT VETTING ERROR ===');
+    console.error('Error type:', error.constructor.name);
+    console.error('Error message:', error.message);
+    console.error('Error status:', error.status);
+    console.error('Error details:', error.error);
+    console.error('Full error:', JSON.stringify(error, null, 2));
 
     // Return detailed error information
     return NextResponse.json(
@@ -234,11 +239,14 @@ TASK: Vet this content using the 7-tier NOCHILL vetting system. Return a structu
         message: 'Content vetting failed',
         error: error.message,
         errorType: error.constructor.name,
-        stack: process.env.NODE_ENV === 'development' ? error.stack : undefined,
+        errorStatus: error.status,
+        errorDetails: error.error,
+        anthropicError: error.constructor.name.includes('Anthropic'),
         details: {
           hasAnthropicKey: !!process.env.ANTHROPIC_API_KEY,
           hasDatabaseUrl: !!process.env.DATABASE_URL,
-          contentId: params.id
+          contentId: params.id,
+          modelUsed: 'claude-3-5-sonnet-20240620'
         }
       },
       { status: 500 }
