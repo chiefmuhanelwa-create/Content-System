@@ -2,10 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
 import { comparePassword, generateToken } from '@/lib/auth';
 
-const sql = neon(process.env.DATABASE_URL!);
-
 export async function POST(request: NextRequest) {
   try {
+    // Initialize database connection (lazy initialization for build compatibility)
+    const sql = neon(process.env.DATABASE_URL || '');
+
     const { email, password } = await request.json();
 
     // Validate input
