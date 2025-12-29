@@ -227,8 +227,20 @@ TASK: Vet this content using the 7-tier NOCHILL vetting system. Return a structu
 
   } catch (error: any) {
     console.error('Content vetting error:', error);
+
+    // Return detailed error information
     return NextResponse.json(
-      { message: 'Internal server error', error: error.message },
+      {
+        message: 'Content vetting failed',
+        error: error.message,
+        errorType: error.constructor.name,
+        stack: process.env.NODE_ENV === 'development' ? error.stack : undefined,
+        details: {
+          hasAnthropicKey: !!process.env.ANTHROPIC_API_KEY,
+          hasDatabaseUrl: !!process.env.DATABASE_URL,
+          contentId: params.id
+        }
+      },
       { status: 500 }
     );
   }

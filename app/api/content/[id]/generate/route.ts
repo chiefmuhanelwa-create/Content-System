@@ -129,8 +129,20 @@ TASK: Generate content following the NOCHILL Content Governance System's Constit
 
   } catch (error: any) {
     console.error('Content generation error:', error);
+
+    // Return detailed error information
     return NextResponse.json(
-      { message: 'Internal server error', error: error.message },
+      {
+        message: 'Content generation failed',
+        error: error.message,
+        errorType: error.constructor.name,
+        stack: process.env.NODE_ENV === 'development' ? error.stack : undefined,
+        details: {
+          hasAnthropicKey: !!process.env.ANTHROPIC_API_KEY,
+          hasDatabaseUrl: !!process.env.DATABASE_URL,
+          contentId: params.id
+        }
+      },
       { status: 500 }
     );
   }
