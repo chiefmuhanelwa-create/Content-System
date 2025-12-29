@@ -67,17 +67,80 @@ export default function GeneratePage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-md text-center">
-          <div className="text-6xl mb-4">❌</div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Error</h2>
-          <p className="text-gray-600 mb-6">{error}</p>
-          <Link
-            href="/dashboard"
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700"
-          >
-            Back to Dashboard
-          </Link>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl w-full">
+          <div className="text-center mb-6">
+            <div className="text-6xl mb-4">❌</div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Content Generation Failed</h2>
+          </div>
+
+          <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+            <div className="flex">
+              <div className="flex-shrink-0">
+                <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <p className="text-sm font-medium text-red-800">{error}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4 mb-6">
+            <h3 className="font-semibold text-gray-900">Common Solutions:</h3>
+
+            <div className="bg-yellow-50 border border-yellow-200 rounded p-4">
+              <h4 className="font-semibold text-yellow-900 mb-2">1. Check Anthropic API Key</h4>
+              <p className="text-sm text-yellow-800 mb-2">
+                Most likely issue: ANTHROPIC_API_KEY not configured in Vercel
+              </p>
+              <ul className="text-sm text-yellow-700 list-disc list-inside space-y-1">
+                <li>Get key from <a href="https://console.anthropic.com" target="_blank" className="underline">console.anthropic.com</a></li>
+                <li>Add to Vercel → Settings → Environment Variables</li>
+                <li>Name: <code className="bg-yellow-100 px-1 rounded">ANTHROPIC_API_KEY</code></li>
+                <li>Then redeploy your app</li>
+              </ul>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded p-4">
+              <h4 className="font-semibold text-blue-900 mb-2">2. Check Database Setup</h4>
+              <p className="text-sm text-blue-800 mb-2">
+                Make sure you ran the database schema in Neon
+              </p>
+              <ul className="text-sm text-blue-700 list-disc list-inside space-y-1">
+                <li>Go to <a href="https://console.neon.tech" target="_blank" className="underline">console.neon.tech</a></li>
+                <li>Open SQL Editor</li>
+                <li>Run all 294 lines from <code className="bg-blue-100 px-1 rounded">database/schema.sql</code></li>
+              </ul>
+            </div>
+
+            <div className="bg-purple-50 border border-purple-200 rounded p-4">
+              <h4 className="font-semibold text-purple-900 mb-2">3. Run System Health Check</h4>
+              <p className="text-sm text-purple-800 mb-2">
+                Visit this URL to see detailed diagnostics:
+              </p>
+              <code className="text-sm bg-purple-100 px-2 py-1 rounded block">
+                {typeof window !== 'undefined' ? window.location.origin : ''}/api/system/health
+              </code>
+            </div>
+          </div>
+
+          <div className="flex gap-3">
+            <Link
+              href="/dashboard"
+              className="flex-1 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 text-center"
+            >
+              Back to Dashboard
+            </Link>
+            <a
+              href="/api/system/health"
+              target="_blank"
+              className="flex-1 px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 text-center"
+            >
+              Check System Health
+            </a>
+          </div>
         </div>
       </div>
     );
