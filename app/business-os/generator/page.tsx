@@ -2,7 +2,22 @@
 
 import { useState } from 'react';
 import { Sparkles, Zap, Target, RefreshCw, Copy, CheckCircle, Film, AlertCircle } from 'lucide-react';
-import { HOOK_LIBRARY, STORY_BANK, SEEDS_CRITERIA, FRAMEWORKS, SIGNATURE_PHRASES, CTA_LIBRARY } from '@/lib/content-data';
+import {
+  HOOK_LIBRARY,
+  STORY_BANK,
+  SEEDS_CRITERIA,
+  FRAMEWORKS,
+  SIGNATURE_PHRASES,
+  CTA_LIBRARY,
+  PORTABLE_PROVERBS,
+  UBUNTU_PHRASES,
+  KINGDOM_PARADOXES,
+  SENSORY_TEMPLATES,
+  TRANSITION_BRIDGES,
+  OPEN_ENDINGS,
+  TRIPLE_PATTERNS,
+  NESTED_STORY_ELEMENTS,
+} from '@/lib/content-data';
 
 type SEEDSStage = 'Signal' | 'Engagement' | 'Education' | 'Decision' | 'Success';
 type Platform = 'Instagram Reel' | 'TikTok' | 'YouTube Short' | 'LinkedIn Post' | 'Twitter Thread';
@@ -212,14 +227,8 @@ export default function ContentGenerator() {
         psychological_principle: 'Pattern Interrupt + Curiosity Gap'
       });
 
-      // PART 2: TRANSITION (0:03-0:05)
-      const transitions = [
-        "Sounds crazy, right? Let me explain.",
-        "Here's what actually happened...",
-        "I know what you're thinking. But listen.",
-        "This is the part nobody talks about."
-      ];
-      const transitionSection = transitions[Math.floor(Math.random() * transitions.length)];
+      // PART 2: TRANSITION (0:03-0:05) - Jesus Method: Bridge from Familiar to Revolutionary
+      const transitionSection = TRANSITION_BRIDGES[Math.floor(Math.random() * TRANSITION_BRIDGES.length)];
       sections.push({
         timestamp: '0:03-0:05',
         part: '2. TRANSITION',
@@ -227,14 +236,14 @@ export default function ContentGenerator() {
         psychological_principle: 'Bridge + Acknowledgment'
       });
 
-      // PART 3: PROBLEM AGITATION (0:05-0:15)
+      // PART 3: PROBLEM AGITATION (0:05-0:15) - Mirror Neurons + Triple Pattern + Sensory Immersion
       const problemAgitations = {
-        'income': "You're creating content every day. Getting views. Building a following. But your bank account? Still empty. You're charging peanuts for brand deals when you should be making real money. And you're exhausted.",
-        'platform': "You've built everything on Instagram. 100K followers. Years of work. But you don't own any of it. One policy change, one algorithm shift, one suspension—and it's all gone. You're building on rented land.",
-        'starting': "You see other creators succeeding and think 'I'm too late.' 'I don't have the equipment.' 'I don't have the audience.' So you stay stuck, scrolling, wishing instead of building.",
-        'investment': "Everyone says you need the expensive camera, the ring light, the studio. So you wait. Save up. Tell yourself 'When I have R50K for equipment, THEN I'll start.' Meanwhile, opportunities pass you by.",
-        'time': "You're spending 20+ hours a week creating content. Editing until 2 AM. Posting seven days a week. And still not getting results. You're working creator hours but making minimum wage.",
-        'monetization': "You have the followers. You have the engagement. But monetization? That's the mystery. Brands ghosting you. No clear path from views to Rands. You're an influencer, not a business owner."
+        'income': `${SENSORY_TEMPLATES.checking_bank.sight} ${SENSORY_TEMPLATES.checking_bank.sound}\n${SENSORY_TEMPLATES.checking_bank.emotion}\n\n${TRIPLE_PATTERNS.problem_stack[0]}\n\nYou're charging peanuts for brand deals when you should be making real money. And you're exhausted.`,
+        'platform': "You've built everything on Instagram. 100K followers. Years of work. But you don't own any of it.\n\nOne policy change. One algorithm shift. One suspension—and it's all gone.\n\nYou're building on rented land. And the landlord can evict you tomorrow.",
+        'starting': "You see other creators succeeding and think:\n'I'm too late.'\n'I don't have the equipment.'\n'I don't have the audience.'\n\nSo you stay stuck. Scrolling. Wishing instead of building.",
+        'investment': "Everyone says you need the expensive camera. The ring light. The studio.\n\nSo you wait. Save up. Tell yourself:\n'When I have R50K for equipment, THEN I'll start.'\n\nMeanwhile, opportunities pass you by.",
+        'time': `${SENSORY_TEMPLATES.checking_bank.internal}\n\n2 AM. Eyes burning from screen glare. Seventh edit of the same 60-second video.\n\n${TRIPLE_PATTERNS.problem_stack[2]}\n\nYou're working creator hours but making minimum wage.`,
+        'monetization': `${TRIPLE_PATTERNS.problem_stack[1]}\n\nBrands ghosting you. No clear path from views to Rands.\n\nYou're an influencer, not a business owner.`
       };
 
       let problemSection = problemAgitations['income']; // default
@@ -260,12 +269,14 @@ export default function ContentGenerator() {
         psychological_principle: `Transformation Arc (${selectedStory.emotional_arc})`
       });
 
-      // PART 5: FRAMEWORK/SOLUTION (0:40-0:50)
+      // PART 5: FRAMEWORK/SOLUTION (0:40-0:50) - Reciprocity + Portable Proverb (African Wisdom)
+      const portableProverb = PORTABLE_PROVERBS[selectedStoryKey as keyof typeof PORTABLE_PROVERBS];
+
       let frameworkSection = '';
       if (frameworkContent) {
-        frameworkSection = `\n\n${frameworkContent}\n\nThat's the system. Not luck. Not chance. A framework you can follow.`;
+        frameworkSection = `${frameworkContent}\n\nThat's the system. Not luck. Not chance. A framework you can follow.\n\n${portableProverb}`;
       } else {
-        frameworkSection = "\n\nThe lesson? Your starting point doesn't determine your ending. Your system does. Build infrastructure, not just content.";
+        frameworkSection = `The lesson? Your starting point doesn't determine your ending. Your system does.\n\nBuild infrastructure, not just content.\n\n${portableProverb}`;
       }
 
       sections.push({
@@ -275,12 +286,17 @@ export default function ContentGenerator() {
         psychological_principle: 'Reciprocity + Pattern Recognition'
       });
 
-      // PART 6: CTA (0:50-0:58)
+      // PART 6: CTA (0:50-0:58) - Invitation (Not Manipulation) + Ubuntu + Open Ending
+      const openEndingQuestion = OPEN_ENDINGS[Math.floor(Math.random() * OPEN_ENDINGS.length)];
+      const ubuntuPhrase = UBUNTU_PHRASES[Math.floor(Math.random() * UBUNTU_PHRASES.length)];
+
+      const enhancedCTA = `${openEndingQuestion}\n\n${ctaContent}\n\n${ubuntuPhrase.call} ${ubuntuPhrase.response}`;
+
       sections.push({
         timestamp: '0:50-0:58',
         part: '6. CTA',
-        content: ctaContent,
-        psychological_principle: 'Clear Action + Social Proof'
+        content: enhancedCTA,
+        psychological_principle: 'Invitation + Ubuntu + Participation'
       });
 
       // PART 7: CLOSER (0:58-1:00)
