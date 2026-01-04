@@ -51,8 +51,8 @@ export default function BusinessDashboard() {
     .sort((a, b) => (a.due_date || '').localeCompare(b.due_date || ''))
     .slice(0, 3);
 
-  // Email list size (subscribers)
-  const emailListSize = students.filter(s => s.stage === 'Subscriber' || s.stage === 'Customer').length;
+  // Email list size (subscribers in Education, Decision, and Success stages)
+  const emailListSize = students.filter(s => s.stage === 'Education' || s.stage === 'Decision' || s.stage === 'Success').length;
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">

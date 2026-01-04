@@ -82,7 +82,8 @@ export interface Student {
   name: string;
   email: string;
   phone?: string;
-  stage: 'Lead' | 'Subscriber' | 'Customer' | 'Graduate' | 'Affiliate' | 'Champion';
+  stage: 'Signal' | 'Engagement' | 'Education' | 'Decision' | 'Success';
+  seeds_source?: string; // Which content brought them in
   product_purchased?: string;
   revenue_contributed: number;
   tags?: string[];
@@ -90,6 +91,7 @@ export interface Student {
   notes?: string;
   created_at?: string;
   last_interaction?: string;
+  stage_history?: { stage: string; date: string; }[]; // Track progression through funnel
 }
 
 export interface FaithEntry {

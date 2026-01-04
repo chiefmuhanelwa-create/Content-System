@@ -13,12 +13,14 @@ import {
   Heart,
   Shield,
   Menu,
-  X
+  X,
+  Sparkles
 } from 'lucide-react';
 import { useState } from 'react';
 
 const navItems = [
   { name: 'Dashboard', href: '/business-os', icon: LayoutDashboard },
+  { name: 'SEEDS Funnel 🌱', href: '/business-os/seeds', icon: Sparkles },
   { name: '90-Day Sprint', href: '/business-os/sprint', icon: Target },
   { name: 'Revenue (PAIDS)', href: '/business-os/revenue', icon: DollarSign },
   { name: 'Product Roadmap', href: '/business-os/products', icon: Package },

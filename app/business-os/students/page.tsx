@@ -4,7 +4,7 @@ import { useBusinessOS, Student } from '@/lib/store';
 import { useState } from 'react';
 import { Plus, Users, TrendingUp, Search } from 'lucide-react';
 
-const STAGES: Student['stage'][] = ['Lead', 'Subscriber', 'Customer', 'Graduate', 'Affiliate', 'Champion'];
+const STAGES: Student['stage'][] = ['Signal', 'Engagement', 'Education', 'Decision', 'Success'];
 
 export default function StudentPipeline() {
   const { students, addStudent } = useBusinessOS();
@@ -39,8 +39,8 @@ export default function StudentPipeline() {
       {/* Header */}
       <div className="flex justify-between items-start">
         <div>
-          <h1 className="text-4xl font-bold mb-2">Student Pipeline</h1>
-          <p className="text-gray-600">Track your students from lead to champion</p>
+          <h1 className="text-4xl font-bold mb-2">Student Pipeline (SEEDS)</h1>
+          <p className="text-gray-600">Track your students through the SEEDS funnel: Signal → Engagement → Education → Decision → Success</p>
         </div>
         <button
           onClick={() => setShowAddModal(true)}
@@ -135,13 +135,15 @@ export default function StudentPipeline() {
                   <td className="py-3">{student.name}</td>
                   <td className="py-3 text-sm text-gray-600">{student.email}</td>
                   <td className="py-3">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${student.stage === 'Champion'
-                      ? 'bg-purple-100 text-purple-700'
-                      : student.stage === 'Graduate'
-                        ? 'bg-green-100 text-green-700'
-                        : student.stage === 'Customer'
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${student.stage === 'Success'
+                      ? 'bg-green-100 text-green-700'
+                      : student.stage === 'Decision'
+                        ? 'bg-orange-100 text-orange-700'
+                        : student.stage === 'Education'
                           ? 'bg-blue-100 text-blue-700'
-                          : 'bg-gray-100 text-gray-700'
+                          : student.stage === 'Engagement'
+                            ? 'bg-pink-100 text-pink-700'
+                            : 'bg-purple-100 text-purple-700'
                       }`}>
                       {student.stage}
                     </span>
@@ -185,7 +187,7 @@ function AddStudentModal({
   const [formData, setFormData] = useState<Student>({
     name: '',
     email: '',
-    stage: 'Lead',
+    stage: 'Signal',
     revenue_contributed: 0,
   });
 
