@@ -277,3 +277,135 @@ export const CTA_LIBRARY = {
     { cta: "Email list link in bio. Where I share what doesn't fit in 60 seconds.", power_score: 7.7, type: "Exclusivity" },
   ],
 };
+
+// Eternal Storytelling Elements - Jesus + Ubuntu + Hero's Journey + Neuroscience
+
+// Portable Proverbs (African Wisdom for Each Story)
+export const PORTABLE_PROVERBS = {
+  "R23K-affiliate": "Money made while you sleep is better than money you beg for standing.",
+  "platform-loss": "Build your house on land you own. Rented land has an eviction date.",
+  "r6k-decision": "The expensive decision that scares you today is cheaper than staying broke tomorrow.",
+  "bathroom-floor": "Your floor today is your foundation tomorrow. Nothing is wasted.",
+  "r350-exploitation": "Your value doesn't change. Your system does.",
+  "4-hours-60-seconds": "One quality piece beats 100 rushed posts. Excellence compounds.",
+};
+
+// Ubuntu Call & Response Phrases
+export const UBUNTU_PHRASES = [
+  { call: "Ubuntu:", response: "I am because we are" },
+  { call: "When one of us wins,", response: "we all level up" },
+  { call: "Your success story", response: "strengthens the next person's faith" },
+  { call: "We don't compete,", response: "we complete each other" },
+  { call: "Building together,", response: "rising together" },
+];
+
+// Kingdom Paradoxes (Opposite of World's Wisdom)
+export const KINGDOM_PARADOXES = [
+  { worldly: "Hold back your best content to sell courses", kingdom: "Give away your best stuff. Trust in abundance. When they see your framework works, they'll want implementation help." },
+  { worldly: "Competition is your enemy", kingdom: "Ubuntu: I am because we are. Your wins validate my teaching. We rise together." },
+  { worldly: "Chase every opportunity", kingdom: "Sometimes the money you don't take is the wealth you build. Short-term cash vs long-term asset." },
+  { worldly: "Never show weakness", kingdom: "Your mess is your message. The bathroom floor became my testimony." },
+  { worldly: "Close hard, manipulate the sale", kingdom: "Invite, don't manipulate. Free will honors God. When you're ready, I'm here." },
+];
+
+// Sensory Immersion Templates (Activate Mirror Neurons)
+export const SENSORY_TEMPLATES = {
+  checking_bank: {
+    sight: "ATM screen glowing. Enter PIN. Balance loads.",
+    sound: "Beep. Transaction complete. Silence.",
+    touch: "Cold metal keypad under fingertips.",
+    emotion: "Stomach sinks. Same number as yesterday.",
+    internal: "'Not again. Please be different this time.'"
+  },
+  phone_notifications: {
+    sight: "Phone screen lighting up in the dark. 6:47 AM.",
+    sound: "Ping. Ping. Ping. Ping. Rapid-fire notifications.",
+    touch: "Fumbling for phone on nightstand. Screen warm.",
+    emotion: "Heart racing. What's happening?",
+    internal: "'Is this real? Am I dreaming?'"
+  },
+  bathroom_floor: {
+    sight: "Building K, third floor. Fluorescent lights buzzing.",
+    sound: "Footsteps echoing. Security making rounds. I hold my breath.",
+    touch: "Cold tile against my back. Thin blanket barely covering me.",
+    smell: "Cleaning chemicals. Industrial soap. Desperation.",
+    emotion: "Shame burning in my chest. Fear in my throat.",
+    internal: "'What if they find me? What if someone sees?'"
+  },
+  account_suspended: {
+    sight: "Black screen. White text: 'Account Disabled.'",
+    sound: "Silence. The loudest silence I've ever heard.",
+    touch: "Phone feels heavier. Or maybe my hand is shaking.",
+    emotion: "Stomach drops. Ten years—gone.",
+    internal: "'This can't be happening. This isn't real.'"
+  },
+};
+
+// Transition Bridges (Jesus Method - Familiar to Revolutionary)
+export const TRANSITION_BRIDGES = [
+  "Sounds crazy, right? Let me explain.",
+  "Here's what actually happened...",
+  "I know what you're thinking. But listen.",
+  "This is the part nobody talks about.",
+  "Let me tell you about [specific date].",
+  "That day taught me something I can't unlearn.",
+  "What happened next changed everything.",
+];
+
+// Open Ending Questions (Audience Participation)
+export const OPEN_ENDINGS = [
+  "Which one are you building: systems or stress?",
+  "If your account disappeared tomorrow, would your business survive?",
+  "Are you creating for views or building for legacy?",
+  "Which stage are you at right now?",
+  "Do you OWN your audience, or are you renting space?",
+  "What's stopping you from starting today?",
+  "Which income stream are you missing?",
+];
+
+// Character Transformation Arcs (5 Stages)
+export const TRANSFORMATION_STAGES = {
+  ignorance: "I thought [common belief]. Everyone said so.",
+  false_confidence: "[Achievement/followers]. I'm doing everything right. [Result] will come.",
+  crisis: "[Reality check]. Something's wrong. This isn't working.",
+  realization: "Wait—[paradigm shift]. That's what I was missing.",
+  transformation: "I'm not a [old identity]. I'm a [new identity]. I [new behavior].",
+};
+
+// Triple Pattern Templates (Power of Three)
+export const TRIPLE_PATTERNS = {
+  problem_stack: [
+    "You're posting daily. Getting views. Making R0.",
+    "You have followers. You have engagement. You have no income.",
+    "Working creator hours. Making minimum wage. Burning out fast.",
+  ],
+  solution_stack: [
+    "Not one stream. Not two streams. Five streams working together.",
+    "Products. Ads. Information. Deals. Services. PAIDS.",
+    "Before: Chasing followers. After: Building systems. Result: Freedom.",
+  ],
+  transformation_stack: [
+    "I tried brand deals. Exhausting. R3K per post.",
+    "I tried sponsored content. Inconsistent. Unpredictable income.",
+    "I discovered PAIDS. Five streams. Changed everything.",
+  ],
+};
+
+// Nested Story Elements (Story Within Story)
+export const NESTED_STORY_ELEMENTS = {
+  "R23K-affiliate": {
+    flashback: "Six months earlier, begging a brand for R3K. They ghosted me.",
+    deeper_past: "Two years before that, bathroom floors. No money. No hope.",
+    present_moment: "Now I'm staring at R23K in commissions. One day.",
+  },
+  "platform-loss": {
+    flashback: "Ten years earlier, posting my first photo. 47 likes. Started the journey.",
+    deeper_past: "Remember thinking: '100K followers = success.' I was wrong.",
+    present_moment: "Account disabled. But 100K emails saved me.",
+  },
+  "r6k-decision": {
+    flashback: "My manager: 'You can't afford that phone. Be responsible.'",
+    deeper_past: "Growing up, hearing: 'Don't take risks. Play it safe.'",
+    present_moment: "That R6K 'irresponsible' choice built everything.",
+  },
+};
